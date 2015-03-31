@@ -1,6 +1,7 @@
 class Author < ActiveRecord::Base
   has_secure_password
 
+  belongs_to :tenant
   has_many :articles
 
   def self.generate_samples(count)
