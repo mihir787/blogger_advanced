@@ -1,4 +1,4 @@
-class CommentsController < ApplicationController
+class Tenants::CommentsController < ApplicationController
   def create
     article = Article.find(params[:comment][:article_id])
     comment = article.comments.create(comment_params)

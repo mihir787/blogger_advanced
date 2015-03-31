@@ -1,4 +1,4 @@
-class ArticlesController < ApplicationController
+class Tenants::ArticlesController < ApplicationController
   before_action :require_author, except: [:show, :index]
 
   def show
