@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  resources :articles
-  resources :comments
-  resource  :account,   only: [:show] do
-    get :work
+  resources :tenants, path: "/:slug", param: "slug"
+
+  namespace :tenants, as: :tenant, path: "/:slug" do
+    resources :articles
+    resources :comments
+    resource  :account,   only: [:show] do
+      get :work
+    end
   end
 
   get  '/login'     => 'sessions#new'
