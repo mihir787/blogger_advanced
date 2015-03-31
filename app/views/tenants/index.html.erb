@@ -1,4 +1,4 @@
-<%= @tenants.each do |tenant| %>
-  <%= tenant.name %>
+<% @tenants.each do |tenant| %>
+  <h1><%= link_to tenant.name, tenant_articles_path(slug: tenant.slug) %></h1>
   <h4>Articles: <%= tenant.articles.count %></h4>
 <% end %>

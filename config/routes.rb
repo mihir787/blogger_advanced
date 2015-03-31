@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :tenants, path: "/:slug", param: "slug"
+  resources :tenants, path: "", param: "slug"
 
   namespace :tenants, as: :tenant, path: "/:slug" do
     resources :articles
@@ -7,12 +7,12 @@ Rails.application.routes.draw do
     resource  :account,   only: [:show] do
       get :work
     end
-  end
 
   get  '/login'     => 'sessions#new'
   post '/login'     => 'sessions#create'
   get  '/logout'    => 'sessions#destroy'
 
+  end
   get  '/dashboard' => 'dashboard#show'
 
   root to: 'tenants#index'

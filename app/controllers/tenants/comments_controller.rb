@@ -4,7 +4,7 @@ class Tenants::CommentsController < ApplicationController
     comment = article.comments.create(comment_params)
 
     flash[:notice] = "Your comment was added."
-    redirect_to article_path(article)
+    redirect_to tenant_article_path(slug: params[:slug], id: article.id)
   end
 
   private
