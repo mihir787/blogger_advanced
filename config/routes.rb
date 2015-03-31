@@ -15,5 +15,5 @@ Rails.application.routes.draw do
 
   get  '/dashboard' => 'dashboard#show'
 
-  root to: 'articles#index'
+  root to: 'tenants#index'
 end
