@@ -1,0 +1,4 @@
+<%= @tenants.each do |tenant| %>
+  <%= tenant.name %>
+  <h4>Articles: <%= tenant.articles.count %></h4>
+<% end %>
